@@ -1,7 +1,46 @@
-# A-B-Test-Experiment-for-Netflix-Website
+# Netflix Website Optimization Using A/B Testing
 
-Netflix is a multi-billion dollar internet streaming company that hosts an extensive library of tv- shows, movies, and documentaries. A core concern within Netflix is that such variety can cause choice paralysis amongst its users. The more time a user spent browsing, and trying to decide what to watch, the more likely they are to ultimately lose interest and choose not to watch anything at all. To address this issue, we could use A/B experimentation to optimize Netflix’s website to reduce the time spent browsing and consequently prevent users from being dissatisfied and leaving.
+## Overview
 
-To do this, I experimented with different configurations of the following website features; tile size, match score, preview length, and preview type. A 2k factorial analysis was performed to identify which features significantly affect the user browsing time, and subsequently use partial F- test analysis to statistically verify the results. Following this we could find the approximate optimum feature values using second order response surface optimization methods and improve the accuracy of these optimum feature value predictions by performing a localized pairwise t-test grid search.
+This project presents a comprehensive A/B experimental analysis focused on optimizing the Netflix website's user interface. Our primary objective was to identify design features that minimize users' average browsing time, thereby enhancing user experience and reducing choice paralysis.
 
-In summary, this project was created to find the optimum feature values that could minimize the average time users spent on browsing Netflix website. To achieve this goal, A/B experimental analysis was designed by varying four design features of the Netflix website, including tile size, match score, preview length, and preview type. Upon performing a 2k factorial analysis, response surface optimization, and pairwise t-test grid search, it was concluded that tile size does not affect user browsing time and that the optimum values for match score, preview length, and preview type are 75%, 74s, and teaser trailer preview respectively.
+
+## Experiment Design
+
+We targeted four key design features of the Netflix website:
+1. **Tile Size:** The ratio of the tile height to the overall screen height.
+2. **Match Score:** The probability, expressed as a percentage, that a user would enjoy a show or movie based on their viewing history.
+3. **Preview Length:** The duration in seconds of the show or movie’s preview.
+4. **Preview Type:** The type of preview shown to the users (actual content or a short teaser trailer).
+
+## Methodology
+
+### 2k Factorial Analysis
+To understand the effect of each design factor on browsing time, we utilized a 2k factorial design. The general model for the factorial design is given by:
+Y = β₀ + β₁X₁ + β₂X₂ + β₃X₃ + ... + ε
+
+
+### Response Surface Optimization
+For finding the approximate optimum values of significant factors, we used the response surface methodology. The quadratic model used is:
+Y = β₀ + ΣβᵢXᵢ + ΣβᵢᵢXᵢ² + ΣβᵢⱼXᵢXⱼ + ε
+
+### Pairwise T-Test Grid Search
+We performed a pairwise t-test grid search to improve the accuracy of the optimum value predictions.
+
+## Key Findings
+
+- **Tile Size:** No significant impact on user browsing time.
+- **Optimum Values:**
+  - Match Score: 75%
+  - Preview Length: 74 seconds
+  - Preview Type: Teaser trailer preview
+
+## Limitations and Future Work
+
+- Limited number of condition combinations tested due to resource constraints.
+- A more extensive pairwise grid search could further refine the optimum condition set.
+- Larger user groups could enhance the robustness of results.
+
+## Conclusion
+
+The study concludes that the tile size does not affect browsing time, whereas specific values for match score, preview length, and preview type significantly enhance user experience by reducing browsing time.
